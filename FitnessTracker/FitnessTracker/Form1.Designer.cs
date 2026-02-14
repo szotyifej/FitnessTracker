@@ -28,25 +28,25 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.txtsportag = new System.Windows.Forms.TextBox();
+            this.txtSportag = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.dtpDatum = new System.Windows.Forms.DateTimePicker();
             this.label2 = new System.Windows.Forms.Label();
             this.nudIdotartam = new System.Windows.Forms.NumericUpDown();
             this.label3 = new System.Windows.Forms.Label();
-            this.txthelyszin = new System.Windows.Forms.TextBox();
+            this.txtHelyszin = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.btnFelvitel = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.nudIdotartam)).BeginInit();
             this.SuspendLayout();
             // 
-            // txtsportag
+            // txtSportag
             // 
-            this.txtsportag.Location = new System.Drawing.Point(45, 69);
-            this.txtsportag.Name = "txtsportag";
-            this.txtsportag.Size = new System.Drawing.Size(100, 22);
-            this.txtsportag.TabIndex = 0;
-            this.txtsportag.Text = "\r\n";
+            this.txtSportag.Location = new System.Drawing.Point(45, 69);
+            this.txtSportag.Name = "txtSportag";
+            this.txtSportag.Size = new System.Drawing.Size(100, 22);
+            this.txtSportag.TabIndex = 0;
+            this.txtSportag.Text = "\r\n";
             // 
             // label1
             // 
@@ -89,12 +89,12 @@
             this.label3.TabIndex = 5;
             this.label3.Text = "idotartam Perc";
             // 
-            // txthelyszin
+            // txtHelyszin
             // 
-            this.txthelyszin.Location = new System.Drawing.Point(483, 67);
-            this.txthelyszin.Name = "txthelyszin";
-            this.txthelyszin.Size = new System.Drawing.Size(100, 22);
-            this.txthelyszin.TabIndex = 6;
+            this.txtHelyszin.Location = new System.Drawing.Point(483, 67);
+            this.txtHelyszin.Name = "txtHelyszin";
+            this.txtHelyszin.Size = new System.Drawing.Size(100, 22);
+            this.txtHelyszin.TabIndex = 6;
             // 
             // label4
             // 
@@ -113,6 +113,7 @@
             this.btnFelvitel.TabIndex = 9;
             this.btnFelvitel.Text = "adatfelvitel";
             this.btnFelvitel.UseVisualStyleBackColor = true;
+            this.btnFelvitel.Click += new System.EventHandler(this.btnFelvitel_Click);
             // 
             // Form1
             // 
@@ -121,13 +122,13 @@
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.btnFelvitel);
             this.Controls.Add(this.label4);
-            this.Controls.Add(this.txthelyszin);
+            this.Controls.Add(this.txtHelyszin);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.nudIdotartam);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.dtpDatum);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.txtsportag);
+            this.Controls.Add(this.txtSportag);
             this.Name = "Form1";
             this.Text = "Form1";
             this.Load += new System.EventHandler(this.Form1_Load);
@@ -139,13 +140,13 @@
 
         #endregion
 
-        private System.Windows.Forms.TextBox txtsportag;
+        private System.Windows.Forms.TextBox txtSportag;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.DateTimePicker dtpDatum;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.NumericUpDown nudIdotartam;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.TextBox txthelyszin;
+        private System.Windows.Forms.TextBox txtHelyszin;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Button btnFelvitel;
     }
