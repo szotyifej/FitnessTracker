@@ -138,6 +138,71 @@ namespace FitnessTracker
         {
 
         }
+
+        private void btnImport_Click(object sender, EventArgs e)
+        {
+
+            List<sportTevekenyseg> lista = new List<sportTevekenyseg>();
+
+            string filePathImport = txtFileImport.Text;
+
+            string[] lines = File.ReadAllLines(filePathImport);
+            foreach (string line in lines) 
+            {
+                string[] parts = line.Split(',');
+                if (parts.Length == 4)
+                {
+                    sportTevekenyseg s = new sportTevekenyseg()
+                    {
+                        Sportag = parts[0],
+                        Datum = DateTime.Parse(parts[1]),
+                        IdotartamPerc = int.Parse(parts[2]),
+                        Helyszin = parts[3]
+                    };
+                    lista.Add(s);
+                }
+            }
+
+
+            string connStr = ConfigurationManager
+                                .ConnectionStrings["SportDB"]
+                                .ConnectionString;
+
+            using (MySqlConnection conn = new MySqlConnection(connStr))
+            {
+                string query = @"INSERT INTO sporttevekenyseg
+                        (Sportag, Datum, IdotartamPerc, Helyszin)
+                        VALUES (@sportag, @datum, @idotartam, @helyszin)";
+
+                
+                    int i = 0;
+                using (MySqlCommand cmd = new MySqlCommand(query, conn))
+                {
+                    cmd.Parameters.Add("@sportag", MySqlDbType.VarChar);
+                    cmd.Parameters.Add("@datum", MySqlDbType.DateTime);
+                    cmd.Parameters.Add("@idotartam", MySqlDbType.Int32);
+                    cmd.Parameters.Add("@helyszin", MySqlDbType.VarChar);
+
+                    conn.Open();
+                    foreach (var item in lista)
+                    {
+                        cmd.Parameters["@sportag"].Value = item.Sportag;
+                        cmd.Parameters["@datum"].Value = item.Datum;
+                        cmd.Parameters["@idotartam"].Value = item.IdotartamPerc;
+                        cmd.Parameters["@helyszin"].Value = item.Helyszin;
+                        cmd.ExecuteNonQuery();
+                    }
+                }
+            }
+
+            MessageBox.Show("Sikeres mentés!");
+
+        }
+
+        private void txtPathImport_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }
 

@@ -43,6 +43,8 @@
             this.label8 = new System.Windows.Forms.Label();
             this.btnImport = new System.Windows.Forms.Button();
             this.txtPath = new System.Windows.Forms.TextBox();
+            this.button1 = new System.Windows.Forms.Button();
+            this.txtFileImport = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.nudIdotartam)).BeginInit();
             this.SuspendLayout();
             // 
@@ -178,11 +180,32 @@
             this.txtPath.Text = "FilePath";
             this.txtPath.TextChanged += new System.EventHandler(this.txtPath_TextChanged);
             // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(459, 198);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(137, 39);
+            this.button1.TabIndex = 17;
+            this.button1.Text = "Import";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.btnImport_Click);
+            // 
+            // txtFileImport
+            // 
+            this.txtFileImport.Location = new System.Drawing.Point(337, 206);
+            this.txtFileImport.Name = "txtFileImport";
+            this.txtFileImport.Size = new System.Drawing.Size(100, 22);
+            this.txtFileImport.TabIndex = 18;
+            this.txtFileImport.Text = "FilePath";
+            this.txtFileImport.TextChanged += new System.EventHandler(this.txtPathImport_TextChanged);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.txtFileImport);
+            this.Controls.Add(this.button1);
             this.Controls.Add(this.txtPath);
             this.Controls.Add(this.btnImport);
             this.Controls.Add(this.label8);
@@ -224,6 +247,8 @@
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Button btnImport;
         private System.Windows.Forms.TextBox txtPath;
+        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.TextBox txtFileImport;
     }
 }
 
