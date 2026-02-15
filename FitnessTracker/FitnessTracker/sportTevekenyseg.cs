@@ -8,6 +8,7 @@ namespace FitnessTracker
 {
     public class sportTevekenyseg
     {
+
         public string Sportag { get; set; }
         public DateTime Datum { get; set; }
         public int IdotartamPerc { get; set; }

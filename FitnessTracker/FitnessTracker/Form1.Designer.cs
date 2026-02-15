@@ -136,23 +136,23 @@
             this.label5.AutoSize = true;
             this.label5.Location = new System.Drawing.Point(42, 178);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(69, 16);
+            this.label5.Size = new System.Drawing.Size(70, 16);
             this.label5.TabIndex = 12;
-            this.label5.Text = "Import File";
+            this.label5.Text = "Export File";
             // 
             // label7
             // 
             this.label7.AutoSize = true;
             this.label7.Location = new System.Drawing.Point(334, 178);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(70, 16);
+            this.label7.Size = new System.Drawing.Size(69, 16);
             this.label7.TabIndex = 13;
-            this.label7.Text = "Export File";
+            this.label7.Text = "Import File";
             // 
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(42, 251);
+            this.label8.Location = new System.Drawing.Point(334, 256);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(387, 16);
             this.label8.TabIndex = 14;
@@ -165,9 +165,9 @@
             this.btnImport.Name = "btnImport";
             this.btnImport.Size = new System.Drawing.Size(135, 39);
             this.btnImport.TabIndex = 15;
-            this.btnImport.Text = "Import";
+            this.btnImport.Text = "Export";
             this.btnImport.UseVisualStyleBackColor = true;
-            this.btnImport.Click += new System.EventHandler(this.btnImport_Click);
+            this.btnImport.Click += new System.EventHandler(this.btnExport_Click);
             // 
             // txtPath
             // 

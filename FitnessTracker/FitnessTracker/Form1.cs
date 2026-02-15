@@ -80,7 +80,7 @@ namespace FitnessTracker
 
         }
 
-        private void btnImport_Click(object sender, EventArgs e)
+        private void btnExport_Click(object sender, EventArgs e)
         {
             List<sportTevekenyseg> lista = new List<sportTevekenyseg>();
 
@@ -112,6 +112,18 @@ namespace FitnessTracker
                 }
 
                 string filePath = txtPath.Text;
+
+                StringBuilder sb = new StringBuilder();
+                sb.AppendLine("Sportag,Datum,IdotartamPerc,Helyszin"); // fejléc
+
+                for (int i = 0; i < lista.Count; i++)
+                {
+                    sb.AppendLine($"{lista[i].Sportag},{lista[i].Datum},{lista[i].IdotartamPerc},{lista[i].Helyszin}");
+                }
+
+                File.WriteAllText(filePath, sb.ToString());
+
+                MessageBox.Show("Sikeres exportálás!");
 
             }
         }  
