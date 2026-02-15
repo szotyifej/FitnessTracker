@@ -28,7 +28,7 @@ SET time_zone = "+00:00";
 --
 
 CREATE TABLE `sporttevekenyseg` (
-  `Id` int(11) NOT NULL,
+  `Id` int(11) NOT NULL AUTO_INCREMENT,
   `Sportag` varchar(100) NOT NULL,
   `Datum` date NOT NULL,
   `IdotartamPerc` int(11) NOT NULL,
