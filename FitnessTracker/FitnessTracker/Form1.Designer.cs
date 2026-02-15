@@ -167,7 +167,7 @@
             this.btnImport.TabIndex = 15;
             this.btnImport.Text = "Import";
             this.btnImport.UseVisualStyleBackColor = true;
-            this.btnImport.Click += new System.EventHandler(this.button1_Click);
+            this.btnImport.Click += new System.EventHandler(this.btnImport_Click);
             // 
             // txtPath
             // 
@@ -176,7 +176,7 @@
             this.txtPath.Size = new System.Drawing.Size(100, 22);
             this.txtPath.TabIndex = 16;
             this.txtPath.Text = "FilePath";
-            this.txtPath.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
+            this.txtPath.TextChanged += new System.EventHandler(this.txtPath_TextChanged);
             // 
             // Form1
             // 

@@ -6,11 +6,13 @@ using System.Configuration;
 using System.Data;
 using System.Data.SqlClient;
 using System.Drawing;
+using System.IO;
 using System.Linq;
+using System.Runtime.CompilerServices;
+using System.Security.Cryptography.X509Certificates;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-
 namespace FitnessTracker
 {
     public partial class Form1 : Form
@@ -78,12 +80,44 @@ namespace FitnessTracker
 
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void btnImport_Click(object sender, EventArgs e)
         {
+            List<sportTevekenyseg> lista = new List<sportTevekenyseg>();
 
-        }
+            string connectionString = ConfigurationManager
+                                    .ConnectionStrings["SportDB"]
+                                    .ConnectionString;
 
-        private void textBox1_TextChanged(object sender, EventArgs e)
+            using (MySqlConnection conn = new MySqlConnection(connectionString))
+            {
+                conn.Open();
+
+                string query = "SELECT Sportag, Datum, IdotartamPerc, Helyszin FROM sporttevekenyseg";
+
+                using (MySqlCommand cmd = new MySqlCommand(query, conn))
+                using (MySqlDataReader reader = cmd.ExecuteReader())
+                {
+                    while (reader.Read())
+                    {
+                        sportTevekenyseg s = new sportTevekenyseg()
+                        {
+                            Sportag = reader.GetString("Sportag"),
+                            Datum = reader.GetDateTime("Datum"),
+                            IdotartamPerc = reader.GetInt32("IdotartamPerc"),
+                            Helyszin = reader.GetString("Helyszin")
+                        };
+
+                        lista.Add(s);
+                    }
+                }
+
+                string filePath = txtPath.Text;
+
+            }
+        }  
+
+
+        private void txtPath_TextChanged(object sender, EventArgs e)
         {
 
         }
